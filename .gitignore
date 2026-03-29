@@ -1,0 +1,17 @@
+# Obsidian
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Personal / sensitive
+_context/_personal-context.md
+
+# Daily logs (optional — remove if you want to track these)
+# _daily/
+
+# Env files
+.env
+*.env.local
