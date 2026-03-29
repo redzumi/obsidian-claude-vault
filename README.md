@@ -2,6 +2,8 @@
 
 A personal knowledge management system combining **Obsidian** (PARA structure) with **Claude Code** (daily operating layer) and **Todoist** (GTD task management).
 
+> **Multi-tool:** The vault structure is tool-agnostic. Claude Code and OpenAI Codex CLI are both supported — see [AI Tool Support](#ai-tool-support).
+
 ## Philosophy
 
 One rule to remember:
@@ -104,6 +106,28 @@ Claude only loads what's needed:
 - **Day** — max 3 tasks, suggested by `/morning` each morning
 
 `/weekly-review` helps you close the week and set next week's focus. `/morning` reads the file and suggests today's top 3.
+
+## AI Tool Support
+
+The vault structure (PARA, `_context/`, `_focus.md`) works with any AI coding tool.
+
+| File | Tool | Purpose |
+|------|------|---------|
+| `CLAUDE.md` | Claude Code | Project instructions entry point |
+| `AGENTS.md` | Codex CLI | Project instructions entry point |
+| `.claude/commands/` | Claude Code | Slash command rituals |
+
+### Codex CLI
+
+Basic support is in place via `AGENTS.md`. The ritual commands (`/morning`, `/dayend`, `/weekly-review`) are currently implemented as Claude Code slash commands only.
+
+**TODO:**
+- [ ] Research Codex CLI prompt file format (`-f` flag and prompt directories)
+- [ ] Port ritual logic to `.codex/prompts/` (or equivalent)
+- [ ] Verify `AGENTS.md` field support (allowed-tools, etc.)
+- [ ] Test Codex + Todoist MCP integration
+
+PRs welcome.
 
 ## License
 
